@@ -8,7 +8,7 @@ class Customer:
         self.email = email
 
     def show_customer(self):
-        print(f"Customer: {self.firstname} {self.lastname}\nPhone: {self.phone}\nEmail: {self.email}")
+        print(f"Customer: {self.firstname} {self.lastname}, Phone: {self.phone}, Email: {self.email}")
 
 
 # customer1 = Customer("Wade", "Doolan", "0448175351", "wadedoolan@hotmail.com")
