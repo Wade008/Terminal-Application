@@ -1,5 +1,5 @@
 from customer import Customer
-
+from os import system
 
 class Customers:
 
@@ -29,8 +29,41 @@ class Customers:
         return print(f"{customer.firstname} {customer.lastname} was successfully removed from the system.")
 
     def update_customer(self, customer):
-        pass
 
+            for customer in self.customer_list:
+                if customer == customer:
+                   
+                    response = ""
+                    while response not in ["1","2","3","4"]:
+                        system("clear")
+                        response = input("\nSelect a field to update\n1. first name\n2. last name\n3. phone\n4. email?\n(Enter 1-4 only): ").strip()
+                        
+                        if response == "1":
+                            update = "first name"
+                        elif response == "2":
+                            update = "last name"
+                        elif response == "3":
+                            update = "phone"
+                        elif response == "4":
+                            update = "email"
+                        else:
+                            print("That's not a valid response. Try again.")
+                            input("Please enter to continue...")
+
+                    new_value = input(f"\nEnter new {update}: ")
+                    
+                    # add if statement here
+                    customer.phone = new_value
+
+                   
+
+                    return  print(f"The customer's {update} was successfully updated in system.")
+
+
+
+            
+
+            
 
 
 

@@ -65,7 +65,8 @@ def _find_customer():
         print("2. Delete customer\n")
         response = input("What would you like to do? (Enter 1-2 or any other key to return to the main menu).").strip()
         if response == "1":
-            pass
+            customers.update_customer(customer)
+
         elif response == "2":
             customers.delete_customer(customer)
 
