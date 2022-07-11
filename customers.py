@@ -1,6 +1,7 @@
 from customer import Customer
 from os import system
 
+
 class Customers:
 
     def __init__(self, customer_list):
@@ -30,50 +31,35 @@ class Customers:
 
     def update_customer(self, customer):
 
-            for customer in self.customer_list:
-                if customer == customer:
-                   
-                    response = ""
-                    while response not in ["1","2","3","4"]:
-                        system("clear")
-                        response = input("\nSelect a field to update\n1. first name\n2. last name\n3. phone\n4. email?\n(Enter 1-4 only): ").strip()
-                        
-                        if response == "1":
-                            update = "first name"
-                        elif response == "2":
-                            update = "last name"
-                        elif response == "3":
-                            update = "phone"
-                        elif response == "4":
-                            update = "email"
-                        else:
-                            print("That's not a valid response. Try again.")
-                            input("Please enter to continue...")
+        response = ""
+        while response not in ["1", "2", "3", "4"]:
+            system("clear")
+            response = input(
+                "\nSelect a field to update\n1. first name\n2. last name\n3. phone\n4. email\n(Enter 1-4 only): ").strip()
 
-                    new_value = input(f"\nEnter new {update}: ")
-                    
-                    # add if statement here
-                    customer.phone = new_value
+            if response == "1":
+                update = "first name"
+            elif response == "2":
+                update = "last name"
+            elif response == "3":
+                update = "phone"
+            elif response == "4":
+                update = "email"
+            else:
+                print("That's not a valid response. Try again.")
+                input("Please enter to continue...")
 
-                   
+        new_value = input(f"\nEnter new {update}: ")
 
-                    return  print(f"The customer's {update} was successfully updated in system.")
+        if update == "first name":
+            customer.firstname = new_value
+        elif update == "last name":
+            customer.lastname = new_value
+        elif update == "phone":
+            customer.phone = new_value
+        else:
+            customer.email = new_value
 
+        return print(f"The customer's {update} was successfully updated in the system.")
 
-
-            
-
-            
-
-
-
-
-
-    # def remove_customer(self, phone, email):
-
-    #     #iterate over customer list searching for customer
-    #     #only look using phone or email as these are unique ids
-
-    #     for customer in self.customer_list:
-
-    #         if customer.phone == phone or customer.email == email:
+   
