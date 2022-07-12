@@ -62,4 +62,5 @@ class Customers:
 
         return print(f"The customer's {update} was successfully updated in the system.")
 
-   
+    def update_credit(self, customer):
+        pass

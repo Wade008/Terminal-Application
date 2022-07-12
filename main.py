@@ -20,12 +20,16 @@ while selection != "q":
 
     selection = mainfunct._main_menu()
 
-    if selection == "b" or selection == "d":
-        mainfunct._find_customer(customers)
+    if selection == "a":
+       pass
+    elif selection == "b":
+        mainfunct._find_customer(customers, "b")
     elif selection == "c":
         mainfunct._add_customer(customers)
-    elif selection == "e":
+    elif selection == "d":
         mainfunct._show_all_customers(customers)
+    elif selection == "e":
+        pass
     elif selection == "q":
         continue
     else:

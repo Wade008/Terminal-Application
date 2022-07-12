@@ -25,9 +25,8 @@ def _main_menu():
     print("a. Update or view a customer's credit")
     print("b. Update or view a customer's details")
     print("c. Add a new customer")
-    print("d. Remove a customer")
-    print("e. View all store customers")
-    print("f. View total outstanding credit for the store")
+    print("d. View all store customers")
+    print("e. View total outstanding credit for the store")
     print("q. Exit application\n")
 
     selection = input(
@@ -48,7 +47,7 @@ def _add_customer(customers):
     print(f"{fname} {lname} has been added to the system")
 
 
-def _find_customer(customers):
+def _find_customer(customers, option):
 
     lookup = input(
         "Search for a customer by entering either their email or phone: ").strip()
@@ -56,17 +55,20 @@ def _find_customer(customers):
     customer = customers.find_customer(lookup)
 
     try:
-        print(
-            f"\nCustomer details below:\n Name: {customer.firstname} {customer.lastname}\n Phone: {customer.phone}\n Email: {customer.email}\n")
-        print("1. Edit customer")
-        print("2. Delete customer\n")
-        response = input(
-            "What would you like to do? (Enter 1-2 or any other key to return to the main menu).").strip()
-        if response == "1":
-            customers.update_customer(customer)
+        if option == "a":
+            pass
+        elif option == "b":
+            print(
+                f"\nCustomer details below:\n Name: {customer.firstname} {customer.lastname}\n Phone: {customer.phone}\n Email: {customer.email}\n")
+            print("1. Edit customer")
+            print("2. Delete customer\n")
+            response = input(
+                "What would you like to do? (Enter 1-2 or any other key to return to the main menu).").strip()
+            if response == "1":
+                customers.update_customer(customer)
 
-        elif response == "2":
-            customers.delete_customer(customer)
+            elif response == "2":
+                customers.delete_customer(customer)
 
     except AttributeError:
         again = input(
