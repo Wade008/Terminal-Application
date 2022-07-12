@@ -62,5 +62,11 @@ class Customers:
 
         return print(f"The customer's {update} was successfully updated in the system.")
 
-    def update_credit(self, customer):
-        pass
+    def update_credit(self, customer, action, amount):
+        
+        if action == "add":
+            customer.credit += amount
+        elif action == "subtract":
+            customer.credit-= amount
+
+        return print(f"Store credit for {customer.firstname} {customer.lastname} was successfully updated. New credit balance: {customer.credit}")

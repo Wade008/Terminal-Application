@@ -36,11 +36,12 @@ def _main_menu():
 
 # Add a customer
 def _add_customer(customers):
+    # add validation here -- do not allow blanks
     print("Enter customer details below")
-    fname = input("Customer first name: ")
-    lname = input("Customer last name: ")
-    phone = input("Customer Phone number: ")
-    email = input("Customer Email address: ")
+    fname = input("Customer first name: ").strip()
+    lname = input("Customer last name: ").strip()
+    phone = input("Customer Phone number: ").strip()
+    email = input("Customer Email address: ").strip()
 
     customers.add_customer(fname, lname, phone, email)
 
@@ -56,7 +57,8 @@ def _find_customer(customers, option):
 
     try:
         if option == "a":
-            pass
+            print(f"Current credit balnce for {customer.firstname} {customer.lastname} is: {customer.credit}")
+            
         elif option == "b":
             print(
                 f"\nCustomer details below:\n Name: {customer.firstname} {customer.lastname}\n Phone: {customer.phone}\n Email: {customer.email}\n")

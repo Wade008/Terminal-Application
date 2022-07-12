@@ -21,7 +21,7 @@ while selection != "q":
     selection = mainfunct._main_menu()
 
     if selection == "a":
-       pass
+        mainfunct._find_customer(customers, "a")
     elif selection == "b":
         mainfunct._find_customer(customers, "b")
     elif selection == "c":
@@ -29,7 +29,7 @@ while selection != "q":
     elif selection == "d":
         mainfunct._show_all_customers(customers)
     elif selection == "e":
-        pass
+        pass #show store credit debt
     elif selection == "q":
         continue
     else:
