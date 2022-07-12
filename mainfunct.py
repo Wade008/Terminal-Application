@@ -57,9 +57,15 @@ def _find_customer(customers, option):
 
     try:
         if option == "a":
-            print(f"Current credit balnce for {customer.firstname} {customer.lastname} is: {customer.credit}")
-            
+            # add validation here
+            print(
+                f"Current credit balnce for {customer.firstname} {customer.lastname} is: {customer.credit}")
+            action = input("\nEnter 'add' or 'subtract' credit: ").strip()
+            amount = int(input("Enter amount of credit: ").strip())
+            customers.update_credit(customer, action, amount)
+
         elif option == "b":
+            # add validation here
             print(
                 f"\nCustomer details below:\n Name: {customer.firstname} {customer.lastname}\n Phone: {customer.phone}\n Email: {customer.email}\n")
             print("1. Edit customer")
