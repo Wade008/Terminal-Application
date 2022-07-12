@@ -9,9 +9,7 @@ class Customer:
         self.credit = credit
 
     def show_customer(self):
-        print(f"Customer: {self.firstname} {self.lastname}, Phone: {self.phone}, Email: {self.email}, Credit: {self.credit}")
+        print(
+            f"Customer: {self.firstname} {self.lastname}, Phone: {self.phone}, Email: {self.email}, Credit: {self.credit}")
 
 
-# customer1 = Customer("Wade", "Doolan", "0448175351", "wadedoolan@hotmail.com")
-
-# customer1.show_customer()

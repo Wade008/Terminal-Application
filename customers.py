@@ -2,7 +2,7 @@ from customer import Customer
 
 
 class Customers:
-
+    # Customers class with list of of all customers (as a list) and crud methods
     def __init__(self, customer_list):
         self.customer_list = customer_list
 

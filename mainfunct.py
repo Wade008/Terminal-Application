@@ -82,7 +82,7 @@ def _find_customer(customers, option):
         if option == "a":
             # add validation here
             print(
-                f"Current credit balnce for {customer.firstname} {customer.lastname} is: {customer.credit}")
+                f"Current credit balance for {customer.firstname} {customer.lastname} is: {customer.credit}")
             action = input(
                 "\nEnter [a] to add or [s] to subtract credit: ").strip()
             amount = int(input("Enter amount of credit: ").strip())
