@@ -1,7 +1,6 @@
 from customer import Customer
 
 
-
 class Customers:
 
     def __init__(self, customer_list):
@@ -43,10 +42,13 @@ class Customers:
         return print(f"The customer's {update} was successfully updated in the system.")
 
     def update_credit(self, customer, action, amount):
-        
+
         if action == "a":
             customer.credit += amount
         elif action == "s":
-            customer.credit-= amount
+            if customer.credit - amount > 0:
+                customer.credit -= amount
+            else:
+                customer.credit = 0
 
         return print(f"Store credit for {customer.firstname} {customer.lastname} was successfully updated. New credit balance: {customer.credit}")
