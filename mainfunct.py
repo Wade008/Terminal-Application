@@ -35,6 +35,9 @@ def main_menu():
         "What would you like to do? (Enter [a-e] or [q] to exit): ").strip()
     return selection
 
+def _invalid_response():
+    print("That's not a valid response. Try again.")
+    input("Please enter to continue...")
 
 # Add a customer
 def add_customer(customers):
@@ -45,14 +48,13 @@ def add_customer(customers):
     phone = input("Customer Phone number: ").strip()
     email = input("Customer Email address: ").strip()
 
-    customers.add_customer(fname, lname, phone, email)
-
-    print(f"{fname} {lname} has been added to the system")
-
-
-def _invalid_response():
-    print("That's not a valid response. Try again.")
-    input("Please enter to continue...")
+    if not(fname == "" or lname == "" or phone == "" or email == ""):
+        customers.add_customer(fname, lname, phone, email)
+        print(f"{fname} {lname} has been added to the system")
+        return
+    system("clear")
+    _invalid_response()
+    add_customer(customers)
 
 
 # handing the edit options
@@ -120,7 +122,7 @@ def find_customer(customers, option):
                 "\nWhat would you like to do? (Enter [a] or [s] or any other key to return to the main menu: ").strip()
 
             if action == "a" or action == "s":
-                # value error captured if entry not an integer
+              
                 amount = _handle_credit_amount()
                 customers.update_credit(customer, action, amount)
             else:
