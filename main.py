@@ -16,18 +16,18 @@ selection = ""
 while selection != "q":
 
     system("clear")
-    mainfunct._welcome()
+    mainfunct.welcome()
 
-    selection = mainfunct._main_menu()
+    selection = mainfunct.main_menu()
 
     if selection == "a":
-        mainfunct._find_customer(customers, "a")
+        mainfunct.find_customer(customers, "a")
     elif selection == "b":
-        mainfunct._find_customer(customers, "b")
+        mainfunct.find_customer(customers, "b")
     elif selection == "c":
-        mainfunct._add_customer(customers)
+        mainfunct.add_customer(customers)
     elif selection == "d":
-        mainfunct._show_all_customers(customers)
+        mainfunct.show_all_customers(customers)
     elif selection == "e":
         pass #show store credit debt
     elif selection == "q":
@@ -35,7 +35,7 @@ while selection != "q":
     else:
         print("That's not an option. Try again.")
 
-    input("Press any key to return to the main menu")
+    input("Press any key to continue")
     system("clear")
 
 print("Exiting application... Bye!")
