@@ -2,6 +2,7 @@
 from os import system
 from seed import customer_seed
 import mainfunct
+import help
 
 
 # create a new customers object and seed it
@@ -31,7 +32,7 @@ while selection != "q":
     elif selection == "f":
         mainfunct.update_credit_value(customers)
     elif selection == "h":
-        pass  # show help
+        help.help_doc()
     elif selection == "q":
         continue
     else:

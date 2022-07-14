@@ -16,7 +16,7 @@ def welcome():
     else:
         greeting = "Good evening"
 
-    print(f"{greeting}! Welcome to the store credit application.")
+    print(f"{greeting}! Welcome to The Store Credit App.")
     print(f"It's {today_name} {today}\n")
 
 
