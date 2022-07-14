@@ -3,7 +3,7 @@ from os import system
 
 from seed import customer_seed
 import mainfunct
-# Maybe import math
+
 
 # create a new customers object and seed it
 customers = customer_seed()
@@ -30,6 +30,10 @@ while selection != "q":
         mainfunct.show_all_customers(customers)
     elif selection == "e":
         pass #show store credit debt
+    elif selection == "f":
+        mainfunct.update_credit_value(customers)
+    elif selection == "h":
+         pass #show help
     elif selection == "q":
         continue
     else:
