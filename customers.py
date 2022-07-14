@@ -62,6 +62,7 @@ class Customers:
         return print(f"The value of one credit is now worth: ${customer.worth}")
 
     def total_store_credit(self):
+        total_credit = 0
         for customer in self.customer_list:
             total_credit += customer.credit
 

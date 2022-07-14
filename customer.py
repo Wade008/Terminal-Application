@@ -14,3 +14,4 @@ class Customer:
         value = self.credit*self.worth
         print(
             f"Customer: {self.firstname} {self.lastname}, Phone: {self.phone}, Email: {self.email}, Credit: {self.credit}, worth: ${value}")
+   

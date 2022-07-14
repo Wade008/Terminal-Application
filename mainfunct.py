@@ -28,12 +28,12 @@ def main_menu():
     print("[c] Add a new customer")
     print("[d] View all store customers")
     print("[e] View total outstanding credit for the store")
-    print("[f] Update value of credit in the system (default $1)")
+    print("[f] View or update the value of a credit (default $1)")
     print("[h] Help")
     print("[q] Exit application\n")
 
     selection = input(
-        "What would you like to do? (Enter [a-e] or [q] to exit): ").strip()
+        "What would you like to do? (Enter [a-f], [h] for help  or [q] to exit): ").strip()
     return selection
 
 # Generic invalid response function
@@ -156,7 +156,7 @@ def find_customer(customers, option):
 
     except AttributeError:
         again = input(
-            "No customer found. Try again? (type [y] to search again or press any other key to exit) ")
+            "No customer found. Try again? (Enter [y] to search again or press any other key to exit) ")
         if again == "y":
             find_customer(customers, option)
         else:
@@ -170,18 +170,28 @@ def show_all_customers(customers):
 
 # dollar value per credit
 def update_credit_value(customers):
+    customer = customers.customer_list[0]
+    current_worth = customer.worth
 
-    new_value = ""
-    while new_value == "":
-        system("clear")
-        try:
-            new_value = int(
-                input("Enter dollar value of one credit: ").strip())
-        except ValueError:
-            _invalid_response()
-            new_value == ""
+    print(f"The current value of one credit is: ${current_worth}")
 
-    customers.update_worth(new_value)
+    action = input(
+        "Do you want to update credit value? (Enter [y] to update or any other key to return to the main menu): ")
+
+    if action == "y":
+        new_value = ""
+        while new_value == "":
+            system("clear")
+            try:
+                new_value = int(
+                    input("Enter dollar value of one credit: ").strip())
+            except ValueError:
+                _invalid_response()
+                new_value == ""
+
+        customers.update_worth(new_value)
+    else:
+        return
 
 # view total outstanding credit for the store
 
