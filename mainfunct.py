@@ -166,16 +166,17 @@ def find_customer(customers, option):
 def show_all_customers(customers):
     customers.show_customers()
 
+
 # dollar value per credit
 def update_credit_value(customers):
-    
+
     new_value = ""
     while new_value == "":
         try:
-            new_value = int(input("Enter dollar value of one credit: ").strip())
+            new_value = int(
+                input("Enter dollar value of one credit: ").strip())
         except ValueError:
             _invalid_response()
             new_value == ""
 
     customers.update_worth(new_value)
-
