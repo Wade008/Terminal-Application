@@ -172,6 +172,7 @@ def update_credit_value(customers):
 
     new_value = ""
     while new_value == "":
+        system("clear")
         try:
             new_value = int(
                 input("Enter dollar value of one credit: ").strip())
