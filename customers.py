@@ -64,5 +64,4 @@ class Customers:
             total_credit += customer.credit
 
         total_value = total_credit*customer.worth
-        return print(f"")
-        
+        return print(f"Total outstanding store credit is {total_credit}, worth ${total_value}")
