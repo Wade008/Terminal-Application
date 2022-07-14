@@ -1,11 +1,14 @@
 
 from datetime import datetime
 from os import system
+from termcolor import colored
+
 
 # Welcome message with current date
 
 
-def welcome():
+def welcome(name):
+    col = "white"
     date_time = datetime.now()
     today_name = date_time.strftime("%A")
     today = date_time.strftime("%d %B, %Y")
@@ -16,24 +19,25 @@ def welcome():
     else:
         greeting = "Good evening"
 
-    print(f"{greeting}! Welcome to The Store Credit App.")
-    print(f"It's {today_name} {today}\n")
+    print(colored(f"{greeting}, {name}! Welcome to The Store Credit App.", col, attrs=["bold"]))
+    print(colored(f"It's {today_name} {today}\n", col))
 
 
 # Main menu for retail staff
 def main_menu():
-    print("Main menu. Select from the options below:\n")
-    print("[a] Update or view a customer's credit")
-    print("[b] Update or view a customer's details")
-    print("[c] Add a new customer")
-    print("[d] View all store customers")
-    print("[e] View total outstanding credit for the store")
-    print("[f] View or update the value of a credit (default $1)")
-    print("[h] Help")
-    print("[q] Exit application\n")
+    col = "white"
+    print(colored("Main menu. Select from the options below:\n", col))
+    print(colored("[a] Update or view a customer's credit", col))
+    print(colored("[b] Update or view a customer's details", col))
+    print(colored("[c] Add a new customer", col))
+    print(colored("[d] View all store customers", col))
+    print(colored("[e] View total outstanding credit for the store", col))
+    print(colored("[f] View or update the value of a credit (default $1)", col))
+    print(colored("[h] Help", col))
+    print(colored("[q] Exit application\n", col))
 
-    selection = input(
-        "What would you like to do? (Enter [a-f], [h] for help  or [q] to exit): ").strip()
+    selection = input(colored(
+        "What would you like to do? (Enter [a-f], [h] for help  or [q] to exit): ", col, attrs=["bold"])).strip()
     return selection
 
 # Generic invalid response function

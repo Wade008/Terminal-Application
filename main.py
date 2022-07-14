@@ -3,7 +3,10 @@ from os import system
 from seed import customer_seed
 import mainfunct
 import help
+from sys import argv
 
+
+name = argv[1]
 
 # create a new customers object and seed it
 customers = customer_seed()
@@ -15,7 +18,7 @@ selection = ""
 while selection != "q":
 
     system("clear")
-    mainfunct.welcome()
+    mainfunct.welcome(name)
 
     selection = mainfunct.main_menu()
 

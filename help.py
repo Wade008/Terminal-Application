@@ -26,7 +26,9 @@ def help_doc():
         print("- WARNING: If deleting a customer, the customer's details will be permanently removed from the system.\n")
         print("- Feature 2 also includes adding a new customer to the system. Simply enter [c] in the main menu and follow the prompts. And by entering [d] in the main menu you can view all customers in the system\n")
 
-        print("Feature 3: Update or view a customer's store credit:\n")
+        print("Feature 3: Assign a dollar value to store credit:\n")
+
+        print("Feature 4: Calculate and view total outstanding credit and daollar value for the store:\n")
 
 
         exit = input("\nExit help? (Enter [y] to exit): ")
