@@ -1,4 +1,5 @@
 
+from ast import main
 from os import system
 
 from seed import customer_seed
@@ -29,7 +30,7 @@ while selection != "q":
     elif selection == "d":
         mainfunct.show_all_customers(customers)
     elif selection == "e":
-        pass #show store credit debt
+        mainfunct.view_total_credit(customers)
     elif selection == "f":
         mainfunct.update_credit_value(customers)
     elif selection == "h":
