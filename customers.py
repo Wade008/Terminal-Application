@@ -51,7 +51,9 @@ class Customers:
             else:
                 customer.credit = 0
 
-        return print(f"Store credit for {customer.firstname} {customer.lastname} was successfully updated. New credit balance: {customer.credit}, worth ${customer.worth}")
+        worth = customer.credit * customer.worth
+
+        return print(f"Store credit for {customer.firstname} {customer.lastname} was successfully updated. New credit balance: {customer.credit}, worth ${worth}")
 
     def update_worth(self, worth):
         for customer in self.customer_list:

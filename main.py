@@ -1,14 +1,11 @@
 
-from ast import main
 from os import system
-
 from seed import customer_seed
 import mainfunct
 
 
 # create a new customers object and seed it
 customers = customer_seed()
-
 
 # while loop to start main menu
 
@@ -34,7 +31,7 @@ while selection != "q":
     elif selection == "f":
         mainfunct.update_credit_value(customers)
     elif selection == "h":
-         pass #show help
+        pass  # show help
     elif selection == "q":
         continue
     else:

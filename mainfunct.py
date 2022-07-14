@@ -121,8 +121,9 @@ def find_customer(customers, option):
         customer = customers.find_customer(lookup)
 
         if option == "a":
+            worth = customer.credit*customer.worth
             print(
-                f"\nCurrent credit balance for {customer.firstname} {customer.lastname} is: {customer.credit}")
+                f"\nCurrent credit balance for {customer.firstname} {customer.lastname} is: {customer.credit}, worth ${worth}")
             print("[a] add credit")
             print("[s] subtract credit")
 
