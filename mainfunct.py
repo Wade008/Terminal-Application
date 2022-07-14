@@ -181,3 +181,7 @@ def update_credit_value(customers):
             new_value == ""
 
     customers.update_worth(new_value)
+
+# view total outstanding credit for the store
+def view_total_credit(customers):
+    customers.total_store_credit()
