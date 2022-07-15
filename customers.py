@@ -2,14 +2,17 @@ from customer import Customer
 
 
 class Customers:
-    # Customers class with list of of all customers (as a list) and crud methods
-    def __init__(self, customer_list):
-        self.customer_list = customer_list
+    """A class to handle operations involving multiple customers"""
 
+    def __init__(self, customer_list, worth=1):
+        self.customer_list = customer_list
+        self.worth = worth
+
+       
     def show_customers(self):
         print("List of customers in the system")
         for customer in self.customer_list:
-            customer.show_customer()
+            customer.show_customer(self.worth)
 
     def add_customer(self, fname, lname, phone, email):
         self.customer_list.append(Customer(fname, lname, phone, email))
@@ -51,20 +54,20 @@ class Customers:
             else:
                 customer.credit = 0
 
-        worth = customer.credit * customer.worth
+        worth = customer.credit * self.worth
 
         return print(f"Store credit for {customer.firstname} {customer.lastname} was successfully updated. New credit balance: {customer.credit}, worth ${worth}")
 
     def update_worth(self, worth):
-        for customer in self.customer_list:
-            customer.worth = worth
+        
+        self.worth = worth
 
-        return print(f"The value of one credit is now worth: ${customer.worth}")
+        return print(f"The value of one credit is now worth: ${self.worth}")
 
     def total_store_credit(self):
         total_credit = 0
         for customer in self.customer_list:
             total_credit += customer.credit
 
-        total_value = total_credit*customer.worth
+        total_value = total_credit*self.worth
         return print(f"Total outstanding store credit is {total_credit}, worth ${total_value}")

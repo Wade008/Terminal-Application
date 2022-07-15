@@ -14,12 +14,13 @@ def welcome(name):
     today = date_time.strftime("%d %B, %Y")
     if date_time.hour < 12:
         greeting = "Good morning"
-    if date_time.hour < 17:
+    elif date_time.hour < 17:
         greeting = "Good afternoon"
     else:
         greeting = "Good evening"
 
-    print(colored(f"{greeting}, {name}! Welcome to The Store Credit App.", col, attrs=["bold"]))
+    print(colored(
+        f"{greeting}, {name}! Welcome to The Store Credit App.", col, attrs=["bold"]))
     print(colored(f"It's {today_name} {today}\n", col))
 
 
@@ -125,9 +126,9 @@ def find_customer(customers, option):
         customer = customers.find_customer(lookup)
 
         if option == "a":
-            worth = customer.credit*customer.worth
+            worth = customers.worth
             print(
-                f"\nCurrent credit balance for {customer.firstname} {customer.lastname} is: {customer.credit}, worth ${worth}")
+                f"\nCurrent credit balance for {customer.firstname} {customer.lastname} is: {customer.credit}, worth ${customer.credit*worth}")
             print("[a] add credit")
             print("[s] subtract credit")
 
@@ -174,8 +175,8 @@ def show_all_customers(customers):
 
 # dollar value per credit
 def update_credit_value(customers):
-    customer = customers.customer_list[0]
-    current_worth = customer.worth
+
+    current_worth = customers.worth
 
     print(f"The current value of one credit is: ${current_worth}")
 
