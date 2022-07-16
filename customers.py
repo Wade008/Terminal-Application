@@ -8,7 +8,6 @@ class Customers:
         self.customer_list = customer_list
         self.worth = worth
 
-       
     def show_customers(self):
         print("List of customers in the system")
         for customer in self.customer_list:
@@ -59,7 +58,7 @@ class Customers:
         return print(f"Store credit for {customer.firstname} {customer.lastname} was successfully updated. New credit balance: {customer.credit}, worth ${worth}")
 
     def update_worth(self, worth):
-        
+
         self.worth = worth
 
         return print(f"The value of one credit is now worth: ${self.worth}")
