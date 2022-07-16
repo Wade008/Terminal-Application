@@ -29,10 +29,10 @@ def help_doc():
         print("- If editing the customer's details, select which field requires updating: [1] first name, [2] last name,[3] phone, [4] email. Note, only one field can be updated at a time.")
         print("- The program will advise if the field has been updated successfully.")
         print("- WARNING: If deleting a customer, the customer's details will be permanently removed from the system.\n")
-        print("- This feature also includes adding a new customer to the system. Simply enter [c] in the main menu and follow the prompts. And by entering [d] in the main menu you can view all customers in the system\n")
+        print("- This feature also includes adding a new customer to the system. Simply enter [c] in the main menu and follow the prompts. And by entering [d] in the main menu you can view all customers in the system.\n")
 
         print("Feature: Assign a dollar value to store credit:\n")
-        print("- This feature can be access by entering the letter [f] in the main menu.")
+        print("- This feature can be accessed by entering the letter [f] in the main menu.")
         print("- Initially, the current value of one credit will shown.")
         print("- To update the value of a credit enter the letter [y] at the prompt. Then enter the new value in whole numbers only.\n")
 
