@@ -1,9 +1,14 @@
 #!/bin/bash
 
-if [[ $# == 1 ]]
+if [[ $# == 1 ]] && [[ $1 != "help" ]]
 then
     python3 main.py $1
+
+elif [[ $# == 1 ]] && [[ $1 == "help" ]]
+then 
+    cat start_help.txt
+
 else
-    echo "Error:
-    Please provide ONLY your first name after ./startapp.sh, For example, ./startapp.sh NAME" >&2
+    cat start_help.txt
+
 fi

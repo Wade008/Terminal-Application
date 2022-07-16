@@ -1,0 +1,11 @@
+How to start the Store Credit App
+
+To start the Store Credit App enter the following command into the terminal: ./startapp.sh NAME 
+
+- NAME: Enter your first name only. 
+
+You can access this help file at any time by entering the following command in the terminal: ./startapp.sh help
+
+IMPORTANT NOTE: this application requires Python 3 to run. If python 3 is not installed, the latest version can be downloaded here: https://www.python.org/downloads/
+
+

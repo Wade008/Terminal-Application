@@ -51,23 +51,6 @@ def _invalid_response():
 # Add a customer
 
 
-def add_customer(customers):
-    # add validation here -- do not allow blanks
-    print("Enter customer details below")
-    fname = input("Customer first name: ").strip()
-    lname = input("Customer last name: ").strip()
-    phone = input("Customer Phone number: ").strip()
-    email = input("Customer Email address: ").strip()
-
-    if not(fname == "" or lname == "" or phone == "" or email == ""):
-        customers.add_customer(fname, lname, phone, email)
-        print(f"{fname} {lname} has been added to the system")
-        return
-    system("clear")
-    _invalid_response()
-    add_customer(customers)
-
-
 # handing the edit options
 def _handle_edit():
     response = ""
@@ -118,7 +101,15 @@ def _handle_credit_amount():
 # Find customer function linking main menu and Customers find_customer method
 
 
-def find_customer(customers, option):
+def find_customer(customers, option, search=""):
+
+    # Check if custumer's phone or email exists in the system
+    if option == "check":
+        if customers.find_customer(search):
+            return True
+        else:
+            return False
+
     try:
         lookup = input(
             "Search for a customer by entering either their email or phone: ").strip()
@@ -203,3 +194,25 @@ def update_credit_value(customers):
 
 def view_total_credit(customers):
     customers.total_store_credit()
+
+
+def add_customer(customers):
+    # add validation here -- do not allow blanks
+    print("Enter customer details below")
+    fname = input("Customer first name: ").strip()
+    lname = input("Customer last name: ").strip()
+    phone = input("Customer Phone number: ").strip()
+    email = input("Customer Email address: ").strip()
+
+    # Check if customer's phone or email address already in system
+    if find_customer(customers, "check", phone) or find_customer(customers, "check", email):
+        print(f"The customer's phone or email already exist in the system. Check the details and try again")
+        return
+
+    if not(fname == "" or lname == "" or phone == "" or email == ""):
+        customers.add_customer(fname, lname, phone, email)
+        print(f"{fname} {lname} has been added to the system")
+        return
+    system("clear")
+    _invalid_response()
+    add_customer(customers)
